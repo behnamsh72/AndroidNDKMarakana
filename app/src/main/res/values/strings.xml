@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AndroidNDKMarakana</string>
+    <string name="hello">Get your Fibonacci Numbers Here!</string>
+    <string name="fibJR">fibJR</string>
+    <string name="fibJI">fibJI</string>
+    <string name="fibNR">fibNR</string>
+    <string name="fibNI">fibNI</string>
+    <string name="button">Get Fibonacci Result</string>
+
+</resources>
