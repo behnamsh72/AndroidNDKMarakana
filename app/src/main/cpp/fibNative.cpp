@@ -16,6 +16,7 @@ Java_com_behnam_androidndkmarakana_FibLib_fibNR(
         jclass, //this//
         jlong n) {
     //ll because we are in 64 bit system
+
     __android_log_print(ANDROID_LOG_DEBUG, "FibLib.c", "fibNR(%lld)", n);
     return fib(n);
 }
@@ -27,8 +28,7 @@ Java_com_behnam_androidndkmarakana_FibLib_fibNI(
     __android_log_print(ANDROID_LOG_DEBUG, "FibLib.c", "fibNI(%lld)", n);
     jlong previous = -1;
     jlong result = 1;
-    jlong i;
-    for (i = 0; i <= n; i++) {
+    for (jlong i = 0; i <= n; i++) {
         jlong sum = result + previous;
         previous = result;
         result = sum;

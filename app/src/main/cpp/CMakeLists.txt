@@ -18,6 +18,7 @@ add_library( # Sets the name of the library.
 
         # Provides a relative path to your source file(s).
         fibNative.cpp)
+
 find_library( # Sets the name of the path variable.
         log-lib
 
@@ -25,9 +26,14 @@ find_library( # Sets the name of the path variable.
         # you want CMake to locate.
         log)
 
+add_library( app-glue
+        STATIC
+        ${ANDROID_NDK}/sources/android/native_app_glue/android_native_app_glue.c )
 target_link_libraries( # Specifies the target library.
         fibo-lib
+        app-glue
 
         # Links the target library to the log library
         # included in the NDK.
         ${log-lib})
+

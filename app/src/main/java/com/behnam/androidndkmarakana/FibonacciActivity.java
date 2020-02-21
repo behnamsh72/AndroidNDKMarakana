@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,15 @@ import android.widget.TextView;
 
 public class FibonacciActivity extends AppCompatActivity implements View.OnClickListener {
 
+
+    private static final String TAG = "FibonacciActivity";
+    static {
+        try {
+            System.loadLibrary("libfriendlyarm-things");
+        }catch (UnsatisfiedLinkError e){
+            Log.d(TAG,"lib friendly arm not found");
+        }
+    }
 
     private EditText input;
     private RadioGroup type;
