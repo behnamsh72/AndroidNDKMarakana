@@ -20,7 +20,8 @@ public class FibonacciActivity extends AppCompatActivity implements View.OnClick
     private static final String TAG = "FibonacciActivity";
     static {
         try {
-            System.loadLibrary("libfriendlyarm-things");
+            System.loadLibrary("friendlyarm-things");
+            Log.d(TAG,"we Find this library");
         }catch (UnsatisfiedLinkError e){
             Log.d(TAG,"lib friendly arm not found");
         }
@@ -89,7 +90,5 @@ public class FibonacciActivity extends AppCompatActivity implements View.OnClick
                 output.setText(s);
             }
         }.execute();
-
-
     }
 }
